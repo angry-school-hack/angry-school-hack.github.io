@@ -1,6 +1,6 @@
 ---
 layout: page
-title: D100 Core Mechanic
+title: D100 Core Mechanic by Kaisharga
 permalink: /d100/
 ---
 

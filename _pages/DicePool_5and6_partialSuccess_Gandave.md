@@ -1,6 +1,6 @@
 ---
 layout: page
-title: D6 Dicepool - 5 and 6 Win - Partial Success
+title: D6 Dicepool - 5 and 6 Win - Partial Success by Gandave
 permalink: /pool2/
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Dice Instead of DC
+title: Dice Instead of DC by Unexist
 permalink: /stepdc/
 ---
 

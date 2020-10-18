@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Single d12 D&D-esque Ability Check System
+title: Single d12 D&D-esque Ability Check System by DaaaahWhoosh
 permalink: /d12/
 ---
 

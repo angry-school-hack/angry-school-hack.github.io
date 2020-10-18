@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Roll Under Dicepool
+title: Roll Under Dicepool by Hokieboat
 permalink: /pool1/
 ---
 ## Mixed Dicepool, Roll Under TN and Count Successes

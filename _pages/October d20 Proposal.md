@@ -1,6 +1,6 @@
 ---
 layout: page
-title: D20 + Mods Versus Target Number (TN)
+title: D20 + Mods Versus Target Number (TN) by October Foundry
 permalink: /d201/
 ---
 

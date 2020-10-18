@@ -1,6 +1,6 @@
 ---
 layout: page
-title: D20 + Botch + Critical
+title: D20 + Botch + Critical by Gandave
 permalink: /d202/
 ---
 
