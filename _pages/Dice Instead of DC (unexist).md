@@ -4,6 +4,7 @@ title: Dice Instead of DC
 permalink: /stepdc/
 ---
 
+# Overview
 As Angry illustrates in his [latest post](https://theangrygm.com/three-short-stories/), we don’t need too much granularity for action resolution. Primary factors are:
 1. **Player's idea.** Good, bad or average.
 2. **Character’s talent/skill.** Their avatar strength.
@@ -23,7 +24,7 @@ Now, there’s one little hiccup here. This system doesn’t work with Ability C
 
 So, we focus on Skill Checks. Players have a bunch of skills, and they need to increase them to get better at what they do. It’s that simple. In the beginning, they should have a couple of d8’s, and some d6’s. If they don’t have a skill, they roll a d4.
 
-Let’s say, a player has an Athletics skill of d8. And they are trying to climb an Average Cliff, which is represented by a d8. So both the player and GM roll d8’s and see who wins. If PC wins, they succeed. If GM wins, player fails.
+Let’s say, a player has an Athletics skill of d8. And they are trying to climb an Average Cliff, which is represented by a d8. So both the player and GM roll d8’s and see who wins. Preferably, at the same time. If PC wins, they succeed. If GM wins, player fails.
 
 What happens on a tie? Well, PCs might win. Or it might be a partial success.
 
