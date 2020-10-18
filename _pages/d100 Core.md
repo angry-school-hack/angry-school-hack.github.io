@@ -17,3 +17,6 @@ Gradual improvements over time, as PCs' Ranks slowly climb from 90th place (or t
 
 ## What setup/elements it requires: 
 A set of stats/skills/archetypes/roles/etc 
+
+## What worldfeel it belies: 
+A world where people largely stay in one place and have time to experience the consequences of their actions, where hard work and perseverance do bear fruit eventually, where everyone working together truly does achieve more, but where power is relative and competitive
