@@ -20,6 +20,7 @@ permalink: /pool1/
 
 ## Four Player Inputs:
 1. General Ability
+	- d20: nonexistant
 	- d12: minimal
 	- d10: some/average
 	- d8: significant
@@ -58,30 +59,54 @@ permalink: /pool1/
 Environmental / Externalities range from d20 - d6, Abilities range from d12 - d6
 
 Range from 1d12 & 2d20 to 4d6 vs CN 1-5 and EFF 1-3 (see anydice function)
-- i.e. worst case is 1d12 and 2d20
 
-| TN | EFF 1+ | EFF 3+ |
-|:---:|:---:|:---:|
-| 1 | 17.27% | 0.02% |
-| 5 | 67.19% | 2.6% |
+#### worst case is 1d12 and 2d20
 
-- best case is 4d6
+| EFF 0 | CN | EFF 1+ | EFF 2+ | EFF 3+ |
+|:---:|:---:|:---:|:---:|:---:|
+| 32.81% | 5 | 67.19% | 21.88% | 2.6% |
+| 42.67% | 4 | 57.33% | 14.67% | 1.33% |
+| 54.19% | 3 | 45.81% | 8.63% | 0.56% |
+| 67.5% | 2 | 32.5% | 4% | 0.17% |
+| 82.73% | 1 | 17.27% | 1.04% | 0.02% |
 
-| TN | EFF 1+ | EFF 3+ |
-|:---:|:---:|:---:|
-| 1 | 51.77% | 1.62% |
-| 5 | 99.92% | 86.81% |
+
+#### mid-tier is 2d8 and 2d10
+
+| EFF 0 | CN | EFF 1+ | EFF 2+ | EFF 3+ |
+|:---:|:---:|:---:|:---:|:---:|
+| 3.52% | 5 | 96.48% | 77.73% | 41.02% |
+| 9% | 4 | 91% | 61% | 24% |
+| 19.14% | 3 | 80.86% | 41.48% | 11.39% |
+| 36% | 2 | 64% | 22% | 3.75% |
+| 62.02% | 1 | 37.98% | 6.48% | 0.52% |
+
+
+#### best case is 4d6
+
+| EFF 0 | CN | EFF 1+ | EFF 2+ | EFF 3+ |
+|:---:|:---:|:---:|:---:|:---:|
+| 0.08% | 5 | 99.92% | 98.38% | 86.81% |
+| 1.23% | 4 | 98.77% | 88.89% | 59.36% |
+| 6.25% | 3 | 93.75% | 68.75% | 31.25% |
+| 19.75% | 2 | 80.25% | 40.4% | 11.11% |
+| 48.23% | 1 | 51.77% | 13.19% | 1.62% |
 
 ### AnyDice Function
 
 ```
 function: roll A:d B:d C:d D:d E:d vs CN:n for EFF:n {
-    if 1@{A} != 0 {AD: (#A)d(d(1@[reverse {1@A}]) <= CN)} else {AD: 0}
-    if 1@{B} != 0 {BD: (#B)d(d(1@[reverse {1@B}]) <= CN)} else {BD: 0}
-    if 1@{C} != 0 {CD: (#C)d(d(1@[reverse {1@C}]) <= CN)} else {CD: 0}
-    if 1@{D} != 0 {DD: (#D)d(d(1@[reverse {1@D}]) <= CN)} else {DD: 0}
-    if 1@{E} != 0 {ED: (#E)d(d(1@[reverse {1@E}]) <= CN)} else {ED: 0}
+    AD: [check A vs CN]
+    BD: [check B vs CN]
+    CD: [check C vs CN]
+    DD: [check D vs CN]
+    ED: [check E vs CN]
     result: (AD + BD + CD + DD + ED) >= EFF
+}
+
+function: check A:d vs CN:n {
+    if 1@{A} != 0 {AD: (#A)d(d(1@[reverse {1@A}]) <= CN)} else {AD: 0}
+    result: AD
 }
 
 output [roll 1d12 2d20 {} {} {} vs 1 for 1]
@@ -100,33 +125,28 @@ These show % odds of specified for a given dice input (up to 5 different dice) v
 ### Opposed AnyDice: 
 
 ```
-\caution: server timeout likely\
-function: oppose A:d B:d C:d D:d E:d vs F:s G:s H:s I:s J:s for EFF {
-    S: [sort {F, G, H, I, J}]
-    CN: {#S}@S
+function: roll opposed A:d B:d C:d D:d E:d vs F:s G:s H:s I:s J:s for EFF {
+    CN: [oppose F G H I J]
 
-    if 1@{A} != 0 {AD: (#A)d(d(1@[reverse {1@A}]) < CN)} else {AD: 0}
-    if 1@{B} != 0 {BD: (#B)d(d(1@[reverse {1@B}]) < CN)} else {BD: 0}
-    if 1@{C} != 0 {CD: (#C)d(d(1@[reverse {1@C}]) < CN)} else {CD: 0}
-    if 1@{D} != 0 {DD: (#D)d(d(1@[reverse {1@D}]) < CN)} else {DD: 0}
-    if 1@{E} != 0 {ED: (#E)d(d(1@[reverse {1@E}]) < CN)} else {ED: 0}
+    AD: [calc A vs CN]
+    BD: [calc B vs CN]
+    CD: [calc C vs CN]
+    DD: [calc D vs CN]
+    ED: [calc E vs CN]
     result: (AD + BD + CD + DD + ED) >= EFF
 }
 
+function: calc A:d vs CN:s {
+   if 1@{A} != 0 {AD: (#A)d(d(1@[reverse {1@A}]) < CN)} else {AD: 0}
+   result: AD
+}
 
-output [oppose 1d12 2d20 {} {} {} vs 4d6 {} {} {} {} for 1]
-
-\this is faster but only calculates odds of winning\
-function: oppose A:s B:s C:s {
-    T: [sort {A, B, C}]
+function: oppose A:s B:s C:s D:s E:s {
+    T: [sort {A, B, C, D, E}]
     result: {#T}@T
 }
 
-
-X: [oppose 1d12 2d20 {}]
-Y: [oppose 4d6 {} {}]
-
-output Y = X
+output [roll opposed 1d12 2d20 1d8 {} {} vs 1d8 1d10 1d12 1d6 {} for 1]
 ```
 
 ## Advantages
