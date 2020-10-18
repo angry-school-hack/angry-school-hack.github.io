@@ -59,7 +59,8 @@ Or it can be more granular. The difference itself can be the Margin of Success. 
 
 # Other Situations
 Other situations can also create bonuses (even for the GM); such as perks, flanking, light conditions, situational bonus/penalties etc. Penalties would be bonuses to the opposite side.
-Advancement 
+
+# Advancement 
 Advancement shouldn’t be a problem, as long as we put some skill caps for advancement tiers. With a bunch of skills, players will be able to upgrade their characters pretty often, without breaking the balance of the game. In an assumed 4 Tier advancement system, skill caps should be something like this:
 
 * **T1.** d8
