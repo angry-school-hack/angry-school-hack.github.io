@@ -3,7 +3,7 @@ layout: page
 title: Design Goals
 author: sysangrymin
 categories: [updates]
-excerpt: Design goals for the Angry Hack
+excerpt: Design goals for MDC hack
 ---
 
 # Angry Hack Design Goals
