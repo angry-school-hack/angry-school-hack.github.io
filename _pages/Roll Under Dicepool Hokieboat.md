@@ -20,7 +20,7 @@ permalink: /pool1/
 
 ## Four Player Inputs:
 1. General Ability
-	- d20: nonexistant
+	- d20: nonexistent
 	- d12: minimal
 	- d10: some/average
 	- d8: significant
