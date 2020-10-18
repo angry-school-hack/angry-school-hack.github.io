@@ -1,12 +1,12 @@
 ---
 layout: page
-title: The Angry Way
+title: MDC Design Principles
 author: sysangrymin
 categories: [updates]
-excerpt: A summary of what the Angry Way means for MDC members
+excerpt: A summary of design principles
 ---
 
-# The Angry Way
+# Mad Design Principles
 * The game system is mainly for the GM, who learns the game, builds it, and presents the completed game to the players. In this way the system functions mostly like a level editor.
 * The GM should build a fair, but challenging game, then empower players with information (and more? tbd) to make choices, whereby they succeed or fail. 
 * Player agency is sacrosanct, but there are different levels of agencies possible:
